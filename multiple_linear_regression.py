@@ -1,4 +1,4 @@
-# Imporitng libraries
+# Importing libraries
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -32,7 +32,8 @@ class Linear_regression:
 	def derivative(self):
 		gradient = (1/np.size(self.train_label))*np.dot(self.new_train_data.T,(self.hypothesis()-self.train_label))
 		return gradient
-
+	
+	@tf.function
 	def train(self):
 		self.cost_vals = []
 		m = len(self.train_label)
